@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserRole;
+use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -34,6 +36,39 @@ class UserFactory extends Factory
             'two_factor_recovery_codes' => null,
             'two_factor_confirmed_at' => null,
         ];
+    }
+
+    /**
+     * Indicate that the user is a facility operator for a tenant.
+     */
+    public function operator(?Tenant $tenant = null): static
+    {
+        return $this->state(fn () => [
+            'role' => UserRole::Operator,
+            'tenant_id' => $tenant?->id ?? Tenant::factory(),
+        ]);
+    }
+
+    /**
+     * Indicate that the user is facility staff for a tenant.
+     */
+    public function staff(?Tenant $tenant = null): static
+    {
+        return $this->state(fn () => [
+            'role' => UserRole::Staff,
+            'tenant_id' => $tenant?->id ?? Tenant::factory(),
+        ]);
+    }
+
+    /**
+     * Indicate that the user is the platform super admin.
+     */
+    public function superAdmin(): static
+    {
+        return $this->state(fn () => [
+            'role' => UserRole::SuperAdmin,
+            'tenant_id' => null,
+        ]);
     }
 
     /**

@@ -18,6 +18,12 @@ return [
         'key' => env('POSTMARK_API_KEY'),
     ],
 
+    'paymongo' => [
+        'secret_key' => env('PAYMONGO_SECRET_KEY'),
+        'webhook_secret' => env('PAYMONGO_WEBHOOK_SECRET'),
+        'livemode' => env('PAYMONGO_LIVEMODE', false),
+    ],
+
     'resend' => [
         'key' => env('RESEND_API_KEY'),
     ],
