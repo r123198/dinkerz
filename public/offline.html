@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#16a34a">
+    <title>Offline — CourtOS</title>
+    <style>
+        :root { color-scheme: light dark; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+            background: #fafafa;
+            color: #171717;
+            padding: 1.5rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            body { background: #0a0a0a; color: #ededed; }
+            .card { background: #171717 !important; border-color: #262626 !important; }
+        }
+        .card {
+            max-width: 22rem;
+            width: 100%;
+            text-align: center;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+        }
+        .badge {
+            width: 3.5rem; height: 3.5rem;
+            margin: 0 auto 1rem;
+            border-radius: 9999px;
+            background: #dcfce7; color: #15803d;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 700;
+        }
+        h1 { font-size: 1.125rem; margin: 0 0 .5rem; }
+        p { font-size: .875rem; color: #737373; margin: 0 0 1.5rem; line-height: 1.5; }
+        button {
+            width: 100%;
+            padding: .625rem 1rem;
+            border: 0;
+            border-radius: .5rem;
+            background: #16a34a;
+            color: #fff;
+            font-size: .875rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">C</div>
+        <h1>You're offline</h1>
+        <p>CourtOS needs a connection to show live court availability and take bookings. Reconnect and try again.</p>
+        <button onclick="location.reload()">Retry</button>
+    </div>
+</body>
+</html>

@@ -529,7 +529,7 @@ Open Dashboard → Review Utilization → Identify Empty Hours → Launch Promot
 | Availability | 99.9% uptime |
 | Security | Role-based access control, secure payments, encrypted sensitive data |
 | Scalability | 1,000+ facilities; 100,000+ bookings monthly |
-| Mobile | Fully responsive; Progressive Web App (PWA). No native mobile app required for MVP |
+| Mobile | Fully responsive; Progressive Web App (PWA) — installable with a web manifest, app icons, and a service worker giving an offline fallback. No native mobile app required for MVP |
 
 ---
 

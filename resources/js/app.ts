@@ -35,3 +35,13 @@ initializeTheme();
 
 // This will listen for flash toast data from the server...
 initializeFlashToast();
+
+// Register the service worker so CourtOS is installable and works offline.
+// Only in production builds — the dev server handles assets itself.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+            // Registration failures are non-fatal — the app still works online.
+        });
+    });
+}
